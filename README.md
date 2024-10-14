@@ -5,7 +5,7 @@
 SceneTeller generates realistic and high-quality 3D spaces from natural language prompts describing the object placement in the room.
 
 <div align="center">
-    <img width="100%" alt="teaser" src="./assets/arch.jpg"/>
+    <img width="90%" alt="teaser" src="./assets/arch.jpg"/>
 </div>
 
 ## News
