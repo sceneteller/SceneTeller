@@ -1,11 +1,11 @@
 # SceneTeller: Language-to-3D Scene Generation (ECCV 2024)
 
-### [**Project Page**](https://sceneteller.github.io/) | [**Paper**](https://arxiv.org/abs/2407.20727)
+### [**Project Page**](https://sceneteller.github.io/) | [**Paper**](https://arxiv.org/abs/2407.20727) | [**YouTube**](https://www.youtube.com/watch?v=N0578Zn_r_U)
 
 SceneTeller generates realistic and high-quality 3D spaces from natural language prompts describing the object placement in the room.
 
 <div align="center">
-    <img width="90%" alt="teaser" src="./assets/teaser.jpg"/>
+    <img width="90%" alt="teaser" src="./assets/teaser2.jpg"/>
 </div>
 
 ## News
