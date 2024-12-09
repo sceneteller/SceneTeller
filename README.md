@@ -12,6 +12,10 @@ SceneTeller generates realistic and high-quality 3D spaces from natural language
 - Jul 1, 2024 🔥: SceneTeller is accepted at ECCV 2024!
 - Nov, 2024 : Code will be released.
 
+## Installation & Dependencies
+
+## Dataset
+
 
 ## 📑 Citation
 If you find our work useful, please consider citing:
