@@ -10,18 +10,26 @@ SceneTeller generates realistic and high-quality 3D spaces from natural language
 
 ## News
 - Jul 1, 2024 🔥: SceneTeller is accepted at ECCV 2024!
-- Nov, 2024 : Code will be released.
+- Nov/Dec, 2024 : Code will be released.
 
 ## Installation & Dependencies
 
 ## Dataset
 
-Download [3D-FUTURE](https://tianchi.aliyun.com/dataset/98063) and [preprocessed data](https://drive.google.com/file/d/1NV3pmRpWcehPO5iKJPmShsRp_lNbxJuK/view?usp=sharing) from LayoutGPT to ```./data/```. Then unzip these files. 
+Download [3D-FUTURE](https://tianchi.aliyun.com/dataset/98063) and [preprocessed data](https://drive.google.com/file/d/1NV3pmRpWcehPO5iKJPmShsRp_lNbxJuK/view?usp=sharing) from LayoutGPT to ```./scene_data/```. Then unzip these files. 
 ```
-cd data
+cd scene_data
 unzip 3D-FUTURE-model.zip -d 3D-FUTURE
 unzip data_output.zip
 ```
+
+### Data Preparation
+
+The 3D scene data split provided by LayoutGPT is located in ```./LayoutGPT/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate textual descriptions for the scenes. To run the preprocessing script, use the following command:
+```
+python preprocess_data.py --room bedroom 
+```
+The preprocessed 3D scene data split will be saved in ```./LayoutGPT/dataset/splits-preprocessed```
 
 
 ## 📑 Citation
