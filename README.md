@@ -22,7 +22,7 @@ cd scene_data
 unzip 3D-FUTURE-model.zip -d 3D-FUTURE
 unzip data_output.zip
 ```
-The 3D scene data split provided by LayoutGPT is located in ```./LayoutGPT/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate textual descriptions for the scenes. To run the preprocessing script, use the following command:
+The 3D scene data split provided by LayoutGPT is located in ```./LayoutGPT/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate preliminary rule-based textual descriptions for the scenes. To run the preprocessing script, use the following command:
 ```
 python preprocess_data.py --dataset_dir ./scene_data/data_output --room bedroom 
 ```
