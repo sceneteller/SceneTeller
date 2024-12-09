@@ -16,6 +16,13 @@ SceneTeller generates realistic and high-quality 3D spaces from natural language
 
 ## Dataset
 
+Download [3D-FUTURE](https://tianchi.aliyun.com/dataset/98063) and [preprocessed data](https://drive.google.com/file/d/1NV3pmRpWcehPO5iKJPmShsRp_lNbxJuK/view?usp=sharing) from LayoutGPT to ```./data/```. Then unzip these files. 
+```
+cd data
+unzip 3D-FUTURE-model.zip -d 3D-FUTURE
+unzip data_output.zip
+```
+
 
 ## 📑 Citation
 If you find our work useful, please consider citing:
