@@ -125,7 +125,7 @@ def checkOverlapandOOB(args, id):
 
 def generateSplits(args): 
 
-    root = os.path.join(".", "LayoutGPT/dataset")
+    root = os.path.join(".", "LayoutGen/dataset")
     split_name = "splits-orig"
     data = json.load(open(os.path.join(root, split_name, args.room + "_splits.json")))
 
@@ -407,7 +407,7 @@ def describeOrigBoxes(args, id):
 
 def generateSplitPreprompts(args):
 
-    root = os.path.join(".", "LayoutGPT/dataset")
+    root = os.path.join(".", "LayoutGen/dataset")
     split_name = "splits-preprocessed"
     data = json.load(open(os.path.join(root, split_name, args.room + "_splits.json")))
 

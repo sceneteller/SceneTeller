@@ -15,8 +15,8 @@ openai.organization = ""
 openai.api_key = ""
 tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
 
-parser = argparse.ArgumentParser(prog='LayoutGPT for scene synthesis',
-                                 description='Use GPTs to predict 3D layout for indoor scenes.')
+parser = argparse.ArgumentParser(prog='Scene description generation',
+                                 description='Use GPT to enhance rule-based descriptions')
 parser.add_argument('--room', type=str, default='bedroom', choices=['bedroom', 'livingroom'])
 parser.add_argument('--dataset_dir', type=str)
 parser.add_argument('--split', type=str, default='splits-preprocessed')

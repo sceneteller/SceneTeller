@@ -22,11 +22,11 @@ cd scene_data
 unzip 3D-FUTURE-model.zip -d 3D-FUTURE
 unzip data_output.zip
 ```
-The 3D scene data split provided by LayoutGPT is located in ```./LayoutGPT/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate preliminary rule-based textual descriptions for the scenes. To run the preprocessing script, use the following command:
+The 3D scene data split provided by LayoutGPT is located in ```./LayoutGen/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate preliminary rule-based textual descriptions for the scenes. To run the preprocessing script, use the following command:
 ```
 python preprocess_data.py --dataset_dir ./scene_data/data_output --room bedroom 
 ```
-The preprocessed 3D scene data split will be saved in ```./LayoutGPT/dataset/splits-preprocessed```.
+The preprocessed 3D scene data split will be saved in ```./LayoutGen/dataset/splits-preprocessed```.
 
 ## 3D Layout Generation
 
@@ -34,8 +34,8 @@ First set up your OpenAI authentication in the following scripts, then run the s
 
 To enhance the rule-based scene descriptions using GPT, run the following command. Remove the ```--generate_train``` flag to generate descriptions also for the test data with ```--base_output_dir ./llm_output/bedroom-train-prompt```.
 ```
-cd LayoutGPT
-python run_layoutgpt_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-test-prompt
+cd LayoutGen
+python run_layoutgen_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-test-prompt
 ```
 
 To generate 3D layouts, run the following command:
