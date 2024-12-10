@@ -28,6 +28,15 @@ python preprocess_data.py --dataset_dir ./scene_data/data_output --room bedroom
 ```
 The preprocessed 3D scene data split will be saved in ```./LayoutGPT/dataset/splits-preprocessed```.
 
+## 3D Layout Generation
+
+### Scene Description Enhancement
+
+To enhance the rule-based scene descriptions using GPT, run the following command:
+```
+cd LayoutGPT
+python run_layoutgpt_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-train-prompt
+```
 
 ## 📑 Citation
 If you find our work useful, please consider citing:
