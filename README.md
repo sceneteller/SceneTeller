@@ -32,19 +32,18 @@ The preprocessed 3D scene data split will be saved in ```./LayoutGPT/dataset/spl
 
 First set up your OpenAI authentication in the following scripts, then run the scripts.
 
-### Scene Description Enhancement & Layout Generation
-
 To enhance the rule-based scene descriptions using GPT, run the following command. Remove the ```--generate_train``` flag to generate descriptions also for the test data with ```--base_output_dir ./llm_output/bedroom-train-prompt```.
 ```
 cd LayoutGPT
-python run_layoutgpt_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-train-prompt
+python run_layoutgpt_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-test-prompt
 ```
-
 
 To generate 3D layouts, run the following command:
 ```
 
 ```
+
+## Scene Assembling
 
 
 ## 📑 Citation
