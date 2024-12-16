@@ -47,6 +47,8 @@ cd instruct-gs2gs
 pip install -e .
 ```
 
+3. Optional: To create videos of the scenes, download [FFmpeg](https://www.ffmpeg.org/download.html) and add it to your $PATH.
+
 ## Dataset
 
 Download [3D-FUTURE-model](https://tianchi.aliyun.com/dataset/65347), [3D-FRONT-texture](https://tianchi.aliyun.com/dataset/65347) and [preprocessed data](https://drive.google.com/file/d/1NV3pmRpWcehPO5iKJPmShsRp_lNbxJuK/view?usp=sharing) from LayoutGPT to ```./scene_data/```. Then unzip these files. 
@@ -98,6 +100,11 @@ ns-train splatfacto --data ./output/raw_scenes/bedroom-test/... --max-num-iterat
 To edit GS, run the command:
 ```
 ns-train igs2gs --data ./output/raw_scenes/bedroom-test/...  --load-dir ./output/outputs-splatfacto/.../nerfstudio_models --pipeline.prompt '{"prompt"}' --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.5 --pipeline.transforms_file ./output/raw_scenes/bedroom-test/.../transforms.json --pipeline.path_segm ./output/raw_scenes/bedroom-test/.../segmentation  --pipeline.room bedroom nerfstudio-data  --train-split-fraction 1
+```
+
+You can visualize the stylized scenes with:
+```
+ns-render interpolate --load-config ./output/outputs-splatfacto/.../config.yml --output-path ./output/renders/stylized_scene.mp4 --pose-source train
 ```
 
 
