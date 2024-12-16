@@ -88,6 +88,17 @@ cd BlenderProc
 python ./examples/datasets/front_3d/front_3d_utils.py --assemble_output_dir ../LayoutGen/assemble_output/bedroom-test --hdf_output_dir ../output/hdfs/bedroom-test --scene_output_dir ../output/raw_scenes/bedroom-test --room bedroom
 cd ..
 ```
+## Scene Stylization
+
+Run the following command to train the initial GS:
+```
+ns-train splatfacto --data ./output/raw_scenes/bedroom-test/... --max-num-iterations 20000 nerfstudio-data --train-split-fraction 1
+```
+
+To edit GS, run the command:
+```
+ns-train igs2gs --data ./output/raw_scenes/bedroom-test/...  --load-dir ./output/outputs-splatfacto/.../nerfstudio_models --pipeline.prompt '{"prompt"}' --pipeline.guidance-scale 7.5 --pipeline.image-guidance-scale 1.5 --pipeline.transforms_file ./output/raw_scenes/bedroom-test/.../transforms.json --pipeline.path_segm ./output/raw_scenes/bedroom-test/.../segmentation  --pipeline.room bedroom nerfstudio-data  --train-split-fraction 1
+```
 
 
 ## 📑 Citation
