@@ -9,10 +9,50 @@ SceneTeller generates realistic and high-quality 3D spaces from natural language
 </div>
 
 ## News
+- Dec 16, 2024 🔥🔥: We released SceneTeller.
 - Jul 1, 2024 🔥: SceneTeller is accepted at ECCV 2024!
-- Nov/Dec, 2024 : Code will be released.
 
 ## Installation & Dependencies
+
+1. Clone our repo and create conda environment.
+```
+git clone https://github.com/sceneteller/SceneTeller.git && cd SceneTeller
+conda create -n layoutgpt python=3.8 -y
+pip install -r requirements.txt
+```
+
+1. Clone our repo and create conda environment.
+```
+git clone https://github.com/sceneteller/SceneTeller.git && cd SceneTeller
+conda create -n layoutgpt python=3.8 -y
+pip install -r requirements.txt
+```
+
+2. Install other dependencies.
+```
+# For scene assembling with ATISS
+cd LayoutGen/ATISS
+python setup.py build_ext --inplace
+pip install -e .
+cd ../..
+
+# To render images and segmentation maps
+cd BlenderProc
+pip install -e .
+cd ..
+
+# For stylization
+pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+conda install -c "nvidia/label/cuda-11.8.0" cuda-toolkit
+
+cd nerfstudio
+pip install --upgrade pip setuptools
+pip install -e .
+cd ..
+
+cd instruct-gs2gs
+pip install -e .
+```
 
 ## Dataset
 
