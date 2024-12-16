@@ -15,19 +15,17 @@ openai.organization = ""
 openai.api_key = ""
 tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
 
-parser = argparse.ArgumentParser(prog='Scene description generation',
+parser = argparse.ArgumentParser(prog='SceneTeller',
                                  description='Use GPT to enhance rule-based descriptions')
 parser.add_argument('--room', type=str, default='bedroom', choices=['bedroom', 'livingroom'])
 parser.add_argument('--dataset_dir', type=str)
 parser.add_argument('--split', type=str, default='splits-preprocessed')
 parser.add_argument('--gpt_type', type=str, default='gpt4', choices=['gpt3.5-chat', 'gpt4'])
-parser.add_argument('--base_output_dir', type=str, default='./llm_output/bedroom-train/')
-parser.add_argument('--gpt_input_length_limit', type=int, default=7000)
+parser.add_argument('--base_output_dir', type=str, default='./llm_output/bedroom-test-prompt/')
 parser.add_argument('--unit', type=str, choices=['px', 'm', ''], default='px')
 parser.add_argument("--n_iter", type=int, default=1)
 parser.add_argument("--generate_train", action='store_true')
 parser.add_argument('--verbose', default=False, action='store_true')
-parser.add_argument("--suffix", type=str, default="")
 parser.add_argument("--normalize", action='store_true')
 parser.add_argument("--regular_floor_plan", action='store_true')
 parser.add_argument("--temperature", type=float, default=0.7)
@@ -160,9 +158,6 @@ def _main(args):
 
     with open(f"{args.dataset_dir}/dataset_stats.txt", "r") as file:
         stats = json.load(file)
-
-    if args.regular_floor_plan:
-        args.suffix += '_regular'
 
     # check if have been processed
     args.output_dir = args.base_output_dir

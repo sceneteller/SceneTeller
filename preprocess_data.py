@@ -436,8 +436,8 @@ def generateSplitPreprompts(args):
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(prog='SceneTeller',
-                                 description='Data preprocessing arguments')
-    parser.add_argument('--room', type=str, default='livingroom', choices=['bedroom', 'livingroom'])
+                                 description='Preprocess scenes.')
+    parser.add_argument('--room', type=str, default='bedroom', choices=['bedroom', 'livingroom'])
     parser.add_argument('--dataset_dir', type=str, default='./scene_data/data_output')  
     args = parser.parse_args()
 
