@@ -49,17 +49,17 @@ pip install -e .
 
 ## Dataset
 
-Download [3D-FUTURE](https://tianchi.aliyun.com/dataset/98063) and [preprocessed data](https://drive.google.com/file/d/1NV3pmRpWcehPO5iKJPmShsRp_lNbxJuK/view?usp=sharing) from LayoutGPT to ```./scene_data/```. Then unzip these files. 
+Download [3D-FUTURE-model](https://tianchi.aliyun.com/dataset/65347), [3D-FRONT-texture](https://tianchi.aliyun.com/dataset/65347) and [preprocessed data](https://drive.google.com/file/d/1NV3pmRpWcehPO5iKJPmShsRp_lNbxJuK/view?usp=sharing) from LayoutGPT to ```./scene_data/```. Then unzip these files. 
 ```
 cd scene_data
-unzip 3D-FUTURE-model.zip -d 3D-FUTURE
+unzip 3D-FUTURE-model.zip 
+unzip 3D-FRONT-texture.zip 
 unzip data_output.zip
 ```
-The 3D scene data split provided by LayoutGPT is located in ```./LayoutGen/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate preliminary rule-based textual descriptions for the scenes. To run the preprocessing script, use the following command:
+The 3D scene data split provided by LayoutGPT is located in ```./LayoutGen/dataset/splits-orig```. We further preprocess the data to remove scenes with overlapping objects and out-of-bounds (OOB) conditions, as well as to generate preliminary rule-based textual descriptions for the scenes. The preprocessed split is located in ```./LayoutGen/dataset/splits-preprocessed```. You can preprocess the data by yourself by running:
 ```
 python preprocess_data.py --dataset_dir ./scene_data/data_output --room bedroom 
 ```
-The preprocessed 3D scene data split will be saved in ```./LayoutGen/dataset/splits-preprocessed```.
 
 ## 3D Layout Generation
 
