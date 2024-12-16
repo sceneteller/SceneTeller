@@ -78,6 +78,17 @@ python run_layoutgen_3d.py --dataset_dir ../scene_data/data_output/bedroom --icl
 
 ## Scene Assembling
 
+Run the following commands to assemble the scenes and render them. Assembled scenes will be saved in ```./LayoutGen/assemble_output/bedroom-test```. 
+```
+cd ATISS/scripts
+python assemble_scenes.py --output_directory bedroom-test --room bedroom --model_output ../../llm_output/bedroom-test/tmp/gpt4
+cd ../../..
+
+cd BlenderProc
+python ./examples/datasets/front_3d/front_3d_utils.py --assemble_output_dir ../LayoutGen/assemble_output/bedroom-test --hdf_output_dir ../output/hdfs/bedroom-test --scene_output_dir ../output/raw_scenes/bedroom-test --room bedroom
+cd ..
+```
+
 
 ## 📑 Citation
 If you find our work useful, please consider citing:
