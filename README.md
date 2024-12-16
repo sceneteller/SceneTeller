@@ -9,7 +9,7 @@ SceneTeller generates realistic and high-quality 3D spaces from natural language
 </div>
 
 ## News
-- Dec 16, 2024 🔥🔥: We released SceneTeller.
+- Dec 16, 2024 🔥🔥: We released SceneTeller!
 - Jul 1, 2024 🔥: SceneTeller is accepted at ECCV 2024!
 
 ## Installation & Dependencies
@@ -65,15 +65,15 @@ python preprocess_data.py --dataset_dir ./scene_data/data_output --room bedroom
 
 First set up your OpenAI authentication in the following scripts, then run the scripts.
 
-To enhance the rule-based scene descriptions using GPT, run the following command. Remove the ```--generate_train``` flag to generate descriptions also for the test data with ```--base_output_dir ./llm_output/bedroom-train-prompt```.
+To enhance the rule-based scene descriptions using GPT, run the following command. Remove the ```--generate_train``` flag to generate descriptions also for the test data with ```--base_output_dir ./llm_output/bedroom-test-prompt```.
 ```
 cd LayoutGen
-python run_layoutgen_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-test-prompt
+python run_layoutgen_3d_generateprompt.py --dataset_dir ../scene_data/data_output/bedroom --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --generate_train --base_output_dir ./llm_output/bedroom-train-prompt
 ```
 
 To generate 3D layouts, run the following command:
 ```
-
+python run_layoutgen_3d.py --dataset_dir ../scene_data/data_output/bedroom --icl_type k-similar --K 8 --room bedroom --gpt_type gpt4 --unit px --regular_floor_plan --train_prompt_dir ./llm_output/bedroom-train-prompt/tmp/gpt4 --val_prompt_dir ./llm_output/bedroom-test-prompt/tmp/gpt4 --base_output_dir ./llm_output/bedroom-test/ 
 ```
 
 ## Scene Assembling
