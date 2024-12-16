@@ -118,6 +118,6 @@ If you find our work useful, please consider citing:
   year      = {2024},
 }
 ```
-## Disclaimer
+## Acknowledgements
 
-We thank the authors of [LayoutGPT](https://github.com/weixi-feng/LayoutGPT/tree/master) and [ATISS](https://github.com/nv-tlabs/ATISS/tree/master) for making their code available. Please note that the code provided here is not the official or original version created by the respective individual or organization. Any use of the downstream generation code must comply with the terms and conditions established by the original authors or organizations. It is your responsibility to ensure proper compliance.
+We thank the authors of [LayoutGPT](https://github.com/weixi-feng/LayoutGPT/tree/master), [BlenderProc](https://github.com/DLR-RM/BlenderProc/tree/main), [nerfstudio](https://github.com/nerfstudio-project/nerfstudio/tree/main) and [Instruct-GS2GS](https://github.com/cvachha/instruct-gs2gs/tree/main) for making their code available. Please note that the code provided here is not the official or original version created by the respective individual or organization. Any use of the downstream generation code must comply with the terms and conditions established by the original authors or organizations. 
