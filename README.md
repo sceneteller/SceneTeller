@@ -17,14 +17,7 @@ SceneTeller generates realistic and high-quality 3D spaces from natural language
 1. Clone our repo and create conda environment.
 ```
 git clone https://github.com/sceneteller/SceneTeller.git && cd SceneTeller
-conda create -n layoutgpt python=3.8 -y
-pip install -r requirements.txt
-```
-
-1. Clone our repo and create conda environment.
-```
-git clone https://github.com/sceneteller/SceneTeller.git && cd SceneTeller
-conda create -n layoutgpt python=3.8 -y
+conda create -n sceneteller python=3.8 -y
 pip install -r requirements.txt
 ```
 
